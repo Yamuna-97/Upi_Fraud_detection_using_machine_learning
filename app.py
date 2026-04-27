@@ -103,7 +103,7 @@ with left_col:
     def is_reverse_transaction(sender, receiver, amount):
         for txn in st.session_state.history:
             if txn["sender"] == receiver and txn["receiver"] == sender:
-                if abs(txn["amount"] - amount) < 100:
+                if abs(txn["amount"] - amount) < 10:
                     return True
         return False
 
